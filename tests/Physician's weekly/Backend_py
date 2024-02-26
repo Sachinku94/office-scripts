@@ -1,0 +1,109 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains as AC
+from selenium.common.exceptions import StaleElementReferenceException, NoSuchElementException
+import time
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import datetime
+def get_stale_element_safe(driver, locator):
+    MAX_RETRIES = 3
+    retries = 0
+    while retries < MAX_RETRIES:
+        try:
+            element = driver.find_element(*locator)
+            return element
+        except StaleElementReferenceException:
+            retries += 1
+    raise NoSuchElementException(f"Element {locator} is stale after {MAX_RETRIES} retries")
+
+driver=webdriver.Chrome()
+wait= WebDriverWait(driver,20)
+date=datetime.date
+
+driver.get("https://www.physiciansweekly.com/pw-adm-logs/")
+driver.find_element(By.XPATH,"//input[@id='user_login']").send_keys("sachinprimo")
+driver.find_element(By.XPATH,"//input[@id='user_pass']").send_keys("LMp4fs37sXAXNb2a^uZr^ltp")
+driver.find_element(By.XPATH,"//input[@id='wp-submit']").click()
+time.sleep(55)
+Achains = AC(driver)
+driver.get("https://www.physiciansweekly.com/wp-admin/edit.php?category_name=healthday")
+
+
+current_date = datetime.date.today()
+formatted_date = current_date.strftime("%Y/%m/%d")
+
+print(formatted_date)
+
+tt = driver.find_elements(By.XPATH,"//td[@class='date column-date']")
+
+for article in tt:
+    
+    if article.text.__contains__(formatted_date):
+        print(article.text)
+        tabs=driver.find_elements(By.XPATH,"//a[@class='row-title']")
+        for tab in tabs:
+          Achains.key_down(Keys.CONTROL).click(tab).key_up(Keys.CONTROL).perform()
+          time.sleep(2)
+        
+        break
+    
+    if not article.text.__contains__(formatted_date):
+        continue
+        
+        
+  
+# for t in tt:
+        
+#         if t.text.__contains__(formatted_date):
+            
+#           for article in articles:  
+            
+#             Achains.key_down(Keys.CONTROL).click(article).key_up(Keys.CONTROL).perform()
+            
+#         else:
+#             continue
+
+    
+time.sleep(40)    
+handles =driver.window_handles
+print(type(handles))
+
+peralink_locator = (By.XPATH, "//span[@id='sample-permalink']/a")
+#perlink_locator=By.XPATH, "//span[@id='sample-permalink']/a"
+ar=[]
+print(len(handles))
+
+
+for windows in handles:
+  try:  
+   driver.switch_to.window(windows)
+   driver.refresh()
+   peralink = get_stale_element_safe(driver, peralink_locator)
+
+   
+   if peralink.is_displayed():
+       link=peralink.get_attribute('herf')
+       ad = ar.append(link)
+   
+      
+  except NoSuchElementException:
+      ()       
+      
+          
+          
+print(ar)  
+ 
+   
+      
+    
+          
+       
+      
+   
+  
+      
+    
+      
+
