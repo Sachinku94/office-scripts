@@ -5,7 +5,7 @@ import time
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
-execelfile = r'C:\Users\Primotech\Documents\pw-linkstesting\cdn test links.xlsx'
+execelfile = r'C:\Users\Primotech\Documents\pw-linkstesting\cdn test links_fails.xlsx'
 status_link = []
 result_link = []
 
@@ -18,7 +18,7 @@ def send_url(page_url):
     img_link = []
     allsociallinks = []
 
-    driver.get("https://cdn.physiciansweekly.com/")
+    # driver.get("https://cdn.physiciansweekly.com/")
     driver.get(page_url)
     imglinks = driver.find_elements(By.TAG_NAME, "img")
 
@@ -34,7 +34,7 @@ def send_url(page_url):
             status_link.append("fail")
             result_link.append(imgll)
 
-    time.sleep(60)
+    
     driver.quit()
 
 # Loop through each row in the DataFrame
@@ -51,6 +51,6 @@ for index, row in df.iterrows():
 failed_links_df = pd.DataFrame(result_link, columns=['Failed Links'])
 
 # Save the updated DataFrame and the failed links DataFrame to a new Excel file
-with pd.ExcelWriter(r'C:\Users\Primotech\Documents\pw-linkstesting\updated_excel_file_cdnfail.xlsx') as writer:
+with pd.ExcelWriter(r'C:\Users\Primotech\Documents\pw-linkstesting\updated_excel_file_cdnfail_2.xlsx') as writer:
     df.to_excel(writer, sheet_name='Main Data', index=False)
     failed_links_df.to_excel(writer, sheet_name='Failed Links', index=False)
