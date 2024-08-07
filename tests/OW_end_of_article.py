@@ -17,13 +17,14 @@ wait = WebDriverWait(driver, 20)
 All_links = []
 Count = 0
 urls = [
-    "https://oncweekly.com/the-role-of-cox-2-expression-in-breast-cancer-prognosis/",
-    "https://oncweekly.com/sips-predicts-traes-and-prognosis-in-escc-with-nict/",
-    "https://oncweekly.com/standardizing-ptx-radiotherapy-for-elderly-escc/",
-    "https://oncweekly.com/exploring-smcc-of-the-esophagus-a-center-review/",
-    "https://oncweekly.com/68ga-nota-xh05-for-targeting-lag-3-in-melanoma-imaging/",
-    "https://oncweekly.com/impact-of-lot-on-qol-in-pts-with-fl-real-world-data/",
-    "https://oncweekly.com/gna-bap1-mutation-impact-on-protein-mrna-expression-in-um/",
+    "https://oncweekly.com/effects-of-aki-in-patients-with-lung-adenocarcinoma-receiving-ici/",
+    "https://oncweekly.com/efficacy-of-small-bite-closure-for-hernia-in-crc-surgery/",
+    "https://oncweekly.com/enhancing-nsclc-treatment-anti-mir-155-and-standard-drugs/",
+    "https://oncweekly.com/delayed-surgery-worsens-escc-after-neoadjuvant-immunotherapy/",
+    "https://oncweekly.com/evaluating-surgical-treatment-in-pancreatic-neuroendocrine-tumors/",
+    "https://oncweekly.com/diagnostic-and-prognostic-aspects-of-b-mcl-a-clinical-review/",
+    "https://oncweekly.com/epcoritamab-monotherapy-effective-in-relapsed-fl/",
+    "https://oncweekly.com/prognostic-insights-into-mibc-using-ferroptosis-and-cuproptosis/",
 ]
 
 for url in urls:
