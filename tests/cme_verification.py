@@ -17,22 +17,8 @@ wait = WebDriverWait(driver, 20)
 All_text = []
 Count = 0
 urls = [
-    "https://www.physiciansweekly.com/category/cardiology/atherosclerosis-cardiology/",
-    "https://www.physiciansweekly.com/category/cardiology/atrial-fibrillation-cardiology/",
-    "https://www.physiciansweekly.com/category/cardiology/hypertension-cardiology/",
-    "https://www.physiciansweekly.com/category/cardiology/peripheral-artery-disease-cardiology/",
-    "https://www.physiciansweekly.com/category/cardiology/stroke-cardiology/",
-    "https://www.physiciansweekly.com/category/cardiology/venous-thrombosis-cardiology/",
-    "https://www.physiciansweekly.com/category/endocrinology/diabetes-endocrinology/",
-    "https://www.physiciansweekly.com/category/endocrinology/infertility-endocrinology/",
-    "https://www.physiciansweekly.com/category/endocrinology/menopause-endocrinology/",
-    "https://www.physiciansweekly.com/category/endocrinology/osteoporosis-endocrinology/",
-    "https://www.physiciansweekly.com/category/primary-care/diabetes-primary-care/",
-    "https://www.physiciansweekly.com/category/primary-care/diet-nutrition-primary-care/",
-    "https://www.physiciansweekly.com/category/primary-care/geriatrics-primary-care/",
-    "https://www.physiciansweekly.com/category/primary-care/obesity-primary-care/",
-    "https://www.physiciansweekly.com/category/primary-care/smoking-tobacco-primary-care/",
-    "https://www.physiciansweekly.com/category/primary-care/vaccines-primary-care/",
+    "https://www.physiciansweekly.com/category/oncology-hematology/renal-cell-carcinoma-oncology-hematology/",
+    "https://www.physiciansweekly.com/category/oncology-hematology/skin-cancer-oncology-hematology/",
 ]
 
 

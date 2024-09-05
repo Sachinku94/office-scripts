@@ -17,16 +17,18 @@ wait = WebDriverWait(driver, 20)
 All_links = []
 Count = 0
 urls = [
-    "https://oncweekly.com/effects-of-aki-in-patients-with-lung-adenocarcinoma-receiving-ici/",
-    "https://oncweekly.com/efficacy-of-small-bite-closure-for-hernia-in-crc-surgery/",
-    "https://oncweekly.com/enhancing-nsclc-treatment-anti-mir-155-and-standard-drugs/",
-    "https://oncweekly.com/delayed-surgery-worsens-escc-after-neoadjuvant-immunotherapy/",
-    "https://oncweekly.com/evaluating-surgical-treatment-in-pancreatic-neuroendocrine-tumors/",
-    "https://oncweekly.com/diagnostic-and-prognostic-aspects-of-b-mcl-a-clinical-review/",
-    "https://oncweekly.com/epcoritamab-monotherapy-effective-in-relapsed-fl/",
-    "https://oncweekly.com/prognostic-insights-into-mibc-using-ferroptosis-and-cuproptosis/",
+    "https://oncweekly.com/evaluating-lodds-for-prognosis-in-gec-post-chemoradiation/",
+    "https://oncweekly.com/pembrolizumab-combo-shows-promise-in-t4b-escc-treatment/",
+    "https://oncweekly.com/sumo-machinery-dysregulation-induces-resistance-to-anti-pd-1/",
+    "https://oncweekly.com/low-halp-scores-predict-bladder-cancer-recurrence-after-utuc/",
+    "https://oncweekly.com/immune-recovery-after-chemotherapy-in-children-with-all/",
+    "https://oncweekly.com/ncapd2-a-novel-biomarker-and-target-for-lung-adenocarcinoma/",
+    "https://oncweekly.com/outcomes-and-prognostic-factors-in-elderly-with-la-hlh/",
+    "https://oncweekly.com/vit-gradcam-novel-approach-for-skin-lesion-detection/",
+    "https://oncweekly.com/evaluating-gnrh-a-for-fertility-sparing-ec-and-aeh-treatment/",
+    "https://oncweekly.com/hla-divergence-identified-as-risk-in-haploidentical-hsct/",
+    "https://oncweekly.com/microbial-variations-in-oral-precancerous-disorders-and-cancer/",
 ]
-
 for url in urls:
     driver.get(url)
     try:
